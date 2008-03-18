@@ -7,7 +7,7 @@ use strict;
 
 use Crypt::SmbHash;
 #======================================================================
-$VERSION = '0.1';
+$VERSION = '0.11';
 @ISA = qw(Exporter);
 @EXPORT_OK = qw(del uid maxuid passwd rename users);
 #======================================================================

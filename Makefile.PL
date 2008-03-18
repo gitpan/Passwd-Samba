@@ -4,4 +4,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     'NAME'	=> 'Passwd::Samba',
     'VERSION_FROM' => 'Samba.pm', # finds $VERSION
+	'PREREQ_PM'     => { 'Crypt::SmbHash' => 0.12, 'Exporter' => 0 }, # e.g., Module::Name => 1.1
+	($] >= 5.005 ?    ## Add these new keywords supported since 5.005
+      (AUTHOR     => '£ukasz Strzelecki <strzelec@rswsystems.pl>') : ()),
 );

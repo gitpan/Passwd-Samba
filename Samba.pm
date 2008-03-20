@@ -7,9 +7,9 @@ use strict;
 
 use Crypt::SmbHash;
 #======================================================================
-$VERSION = '0.12';
+$VERSION = '0.13';
 @ISA = qw(Exporter);
-@EXPORT_OK = qw(del uid maxuid passwd rename users);
+@EXPORT_OK = qw(del uid maxuid passwd rename user users);
 #======================================================================
 use constant PASSWD => '/etc/samba/smbpasswd';
 #======================================================================
@@ -95,6 +95,8 @@ sub maxuid {
 	close($fh);
 	return $max;
 }
+#======================================================================
+*user = \&passwd;
 #======================================================================
 sub passwd {
 	shift if $_[0] =~ __PACKAGE__;
@@ -185,6 +187,10 @@ This method changes the username for a user. If NEWNAME corresponds to an existi
 =item B<uid( USERNAME [,UID] )>
 
 Read or modify a user's UID. Returns the result of operation (TRUE or FALSE) if UID was specified otherwhise returns the UID.
+
+=item B<user()>
+
+This alias for passwd. User is created if doesn't exists. 
 
 =item B<users()>
 

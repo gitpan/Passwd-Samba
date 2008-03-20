@@ -17,7 +17,7 @@ SYNOPSIS
 
             use Passwd::Samba qw(del uid maxuid passwd rename users);
 
-            my $err = passwd("example",encpass("newsecret"));
+            my $err = passwd("example", "_plain_text_secret_" );
             foreach my $user (users()) {
                     print "Username: $user\nUID: ", uid($user), "\n\n";
             }
@@ -53,6 +53,9 @@ SUBROUTINES/METHODS
     uid( USERNAME [,UID] )
         Read or modify a user's UID. Returns the result of operation (TRUE
         or FALSE) if UID was specified otherwhise returns the UID.
+
+    user()
+        This alias for passwd. User is created if doesn't exists.
 
     users()
         This method returns a list of all existing usernames.

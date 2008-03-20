@@ -7,7 +7,7 @@ use strict;
 
 use Crypt::SmbHash;
 #======================================================================
-$VERSION = '0.13';
+$VERSION = '0.14';
 @ISA = qw(Exporter);
 @EXPORT_OK = qw(del uid maxuid passwd rename user users);
 #======================================================================
@@ -106,7 +106,7 @@ sub passwd {
 	my $uid = (getpwnam($name))[2];
 	my ($lm, $nt);
 	ntlmgen $passwd, $lm, $nt;
-	__PACKAGE__::del($name);
+	__PACKAGE__->del($name);
 
 	open(my $fh, '>>', PASSWD);
 	printf $fh "%s:%d:%s:%s:[%-11s]:LCT-%08X\n", $name, $uid, $lm, $nt, "U", time;

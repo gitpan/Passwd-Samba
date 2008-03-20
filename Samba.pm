@@ -7,7 +7,7 @@ use strict;
 
 use Crypt::SmbHash;
 #======================================================================
-$VERSION = '0.11';
+$VERSION = '0.12';
 @ISA = qw(Exporter);
 @EXPORT_OK = qw(del uid maxuid passwd rename users);
 #======================================================================
@@ -146,7 +146,7 @@ Passwd::Samba
 
 	use Passwd::Samba qw(del uid maxuid passwd rename users);
 
-	my $err = passwd("example",encpass("newsecret"));
+	my $err = passwd("example", "_plain_text_secret_" );
 	foreach my $user (users()) {
 		print "Username: $user\nUID: ", uid($user), "\n\n";
 	}

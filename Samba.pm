@@ -7,7 +7,7 @@ use strict;
 
 use Crypt::SmbHash;
 #======================================================================
-$VERSION = '0.14';
+$VERSION = '0.141';
 @ISA = qw(Exporter);
 @EXPORT_OK = qw(del uid maxuid passwd rename user users);
 #======================================================================
@@ -219,7 +219,7 @@ None known.
 
 =head1 AUTHOR
 
-Strzelecki Łukasz <strzelec@rswsystems.com>
+Strzelecki Łukasz <lukasz@strzeleccy.eu>
 
 =head1 LICENCE AND COPYRIGHT
 

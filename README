@@ -32,7 +32,9 @@ DESCRIPTION
 
 SUBROUTINES/METHODS
     new( )
-        Constructor.
+        Constructor. Possible parameters are:
+
+        smbpasswd - path to smbpasswd file; default "/etc/samba/smbpasswd"
 
     del( USERNAME0, USERNAME1... )
         This method will delete the list of users. It has no effect if the
@@ -60,6 +62,10 @@ SUBROUTINES/METHODS
     users()
         This method returns a list of all existing usernames.
 
+    smbpasswd_file([PATH])
+        This method, if called with an argument, sets path to the
+        *smbpasswd* file. Otherwise returns the current PATH.
+
 DEPENDENCIES
     Crypt::SmbHash
     Exporter
@@ -69,6 +75,10 @@ INCOMPATIBILITIES
 
 BUGS AND LIMITATIONS
     None known.
+
+THANKS
+    Thanks to Andy Gorman for suggestions as well as supplying relevant
+    patch!
 
 AUTHOR
     Strzelecki Łukasz <lukasz@strzeleccy.eu>
